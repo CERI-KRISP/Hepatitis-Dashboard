@@ -1,0 +1,15 @@
+name: hepatitis-dashboard
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pandas>=2.0
+  - numpy>=1.23
+  - plotly>=5.18
+  - dash>=2.14
+  - dash-bootstrap-components>=1.5
+  - pycountry
+  - pip:
+      - gunicorn        # if you want to deploy on servers (Heroku, Docker, etc.)
