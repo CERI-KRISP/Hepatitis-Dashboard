@@ -923,7 +923,7 @@ app.layout = html.Div([
 						html.P("Developed by Derek Tshiabuila, Vagner Fonseca, Eduan Wilkinson, Tulio de Oliveira", 
 							  className="mb-1 text-muted"),
 						html.A("GitHub Repository", 
-							  href="https://github.com/your-repo", 
+							  href="https://github.com/CERI-KRISP/Hepatitis-Dashboard.git", 
 							  target="_blank", 
 							  className="text-decoration-none text-primary",
 							  style={"fontSize": "0.9rem"})
