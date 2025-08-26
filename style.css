@@ -1,0 +1,43 @@
+.footer-logo {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.footer-logo:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-logo {
+        height: 35px !important;
+        margin: 0.5rem !important;
+    }
+}
+
+/* Ensure proper card height behavior */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for flex children */
+}
+
+/* Graph container */
+.graph-container {
+    flex: 1;
+    min-height: 400px;
+    position: relative;
+}
+
+/* Plotly graph adjustments */
+.js-plotly-plot .plotly .main-svg {
+    overflow: visible !important;
+}
