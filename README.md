@@ -15,7 +15,7 @@ conda env create -f requirements.yaml
 conda activate hepatitis-dashboard
 ```
 
-📊 Data Preparation
+## 📊 Data Preparation
 
 The dashboard integrates multiple datasets. Before running, prepare the required input files:
 
@@ -53,7 +53,7 @@ The dashboard integrates multiple datasets. Before running, prepare the required
 
    - Download prevalence, incidence, and deaths for HBV and HCV from the IHME GBD dataset (https://vizhub.healthdata.org/gbd-results/)
 
-▶️ Running the Dashboard
+## ▶️ Running the Dashboard
 
 Once the data are prepared:
 
@@ -88,7 +88,7 @@ By default, the app runs locally at:
 
 - requirements.yaml – reproducible conda environment
 
-📖 Citation
+## 📖 Citation
 
 If you use this dashboard or data in your work, please cite:
 
