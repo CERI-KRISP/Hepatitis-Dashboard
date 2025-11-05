@@ -18,33 +18,35 @@ import plotly.io as pio
 pio.templates.default = "plotly_white"
 
 
-register_page(__name__, path="/dashboard", name="Dashboard", order=1)
+register_page(__name__, path="/", name="Dashboard", order=0)
+register_page(__name__, path="/dashboard", name="Dashboard")
 
 # Import data loading functions
 from data_loader import load_and_preprocess_data
 
 # Initialize data store (will be loaded on first access)
+data_store = None
+
 def get_data_store():
-    import flask
-    try:
-        server = flask.current_app
-		data_store = server.config.get("DATA_STORE")
-		if data_store is None:
-			from data_loader import load_and_preprocess_data
-			data_store = load_and_preprocess_data()
-			server.config["DATA_STORE"] = data_store
-		return data_store
-	except Exception as e:
-		print(f"Error accessing data store: {e}")
-		return{
-			'hbv_data': pd.DataFrame(),
-			'hcv_data': pd.DataFrame(),
-			'ihme_df': pd.DataFrame(),
-			'population_df': pd.DataFrame(),
-			'coord_lookup': {},
-			'hbv_mut': pd.DataFrame(),
-			'hcv_mut': pd.DataFrame()
-		}
+    """Helper function to access the global data store"""
+    global data_store
+    if data_store is None:
+        try:
+            from data_loader import load_and_preprocess_data
+            data_store = load_and_preprocess_data()
+            print("Data store loaded successfully")
+        except Exception as e:
+            print(f"Error loading data: {e}")
+            # Create empty data store structure to prevent further errors
+            data_store = {
+                'hbv_data': pd.DataFrame(),
+                'hcv_data': pd.DataFrame(), 
+                'ihme_df': pd.DataFrame(),
+                'population_df': pd.DataFrame(),
+                'coord_lookup': {},
+                'hbv_mut': pd.DataFrame(),
+                'hcv_mut': pd.DataFrame()
+            }
     return data_store
 
 # === CONFIG & CONSTANTS ======================================================
