@@ -1,0 +1,16 @@
+/* Circular avatar with double ring */
+.avatar-ring {
+  width: 160px;           /* adjust size as you like */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;       /* clips the image to a circle */
+  /* two rings: inner white, outer blue */
+  box-shadow: 0 0 0 6px #ffffff, 0 0 0 10px #1d4ed8;
+}
+
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* keep face centered & fill */
+  display: block;
+}

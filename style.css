@@ -41,3 +41,211 @@
 .js-plotly-plot .plotly .main-svg {
     overflow: visible !important;
 }
+
+/* style.css - Professional Dashboard Enhancements */
+
+:root {
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+    --color-text: #2c3e50;
+    --color-text-light: #6c757d;
+    --line-height: 1.6;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    line-height: var(--line-height);
+    font-weight: 400;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Optional: Add a very subtle pattern overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e9ecef' fill-opacity='0.15' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.lead {
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* Button enhancements */
+.btn {
+    transition: all 0.2s ease;
+    border-width: 1px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Card interactions */
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(0,0,0,0.075);
+    border: none;
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    border-color: rgba(0,0,0,0.1);
+}
+
+/* Smooth transitions for dropdowns */
+.Select-menu-outer {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Loading bar animation */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+    background-size: 1000px 100%;
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    border-color: #3498db;
+}
+
+/* Pulse animation for important indicators */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: #2c3e50;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 { font-size: calc(1.375rem + 1.5vw); }
+    h2 { font-size: calc(1.325rem + 0.9vw); }
+    h3 { font-size: calc(1.3rem + 0.6vw); }
+    h4 { font-size: calc(1.275rem + 0.3vw); }
+    .card-title { font-size: 1rem; }
+}
+
+/* Additional responsive classes */
+.px-responsive {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+@media (min-width: 576px) {
+    .px-responsive {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .px-responsive {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .px-responsive {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Loading component styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(248, 249, 250, 0.7);
+    border-radius: 8px;
+}
+
+.loading-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+

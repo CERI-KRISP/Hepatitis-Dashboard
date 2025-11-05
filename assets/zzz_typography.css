@@ -1,0 +1,19 @@
+/* Force larger default text across the app */
+body,
+.markdown,
+.dash-markdown {
+  font-size: 1.3rem !important;  /* ~18px */
+  line-height: 1.8 !important;
+}
+
+/* Make paragraphs & list items inherit the new base */
+p,
+li,
+.card-text,
+.markdown p,
+.markdown li,
+.dash-markdown p,
+.dash-markdown li {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}

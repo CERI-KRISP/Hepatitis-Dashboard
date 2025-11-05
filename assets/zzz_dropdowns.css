@@ -1,0 +1,30 @@
+/* --- Coverage order dropdown: fix control height & menu position --- */
+.dd-coverage-order .Select-control {
+  height: 44px;                /* must be explicit so JS measures 44px */
+  min-height: 44px;
+  font-size: 1rem;
+}
+
+/* Align the text in the control vertically */
+.dd-coverage-order .Select-placeholder,
+.dd-coverage-order .Select--single > .Select-control .Select-value {
+  line-height: 44px !important;
+}
+
+/* Options list: spacing & layering */
+.dd-coverage-order .Select-menu-outer {
+  z-index: 2000;
+  max-height: 320px;
+  /* If you still see overlap on some browsers, keep this line: */
+  top: 44px !important;        /* force menu to start below the 44px control */
+}
+
+.dd-coverage-order .Select-option,
+.dd-coverage-order .VirtualizedSelectOption {
+  white-space: normal;
+  line-height: 1.4 !important;
+  padding: 8px 12px !important;
+}
+
+/* If the menu is clipped by the card container */
+.card .card-body { overflow: visible; }
