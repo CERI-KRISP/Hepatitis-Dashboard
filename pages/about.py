@@ -5,7 +5,7 @@ from dash import callback_context as ctx
 from datetime import datetime
 from weasyprint import HTML
 from dash.exceptions import PreventUpdate
-
+import pandas as pd
 
 register_page(__name__, path="/about", name="About")
 
